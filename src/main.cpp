@@ -300,38 +300,42 @@ void mosaiquemirr(sil::Image& image)
     image = resultat;  
 }
 void glitch(sil::Image& image)
-{
+{   
     for (int y = 0; y < image.height(); ++y)
     {
         for (int x = 0; x < image.width(); ++x)
         {
-            if (true_with_probability(0.005f))
+            if (true_with_probability(0.001f))
             {
-                
+                        
                 int rect_width  = random_int(10, 50);
                 int rect_height = random_int(2, 10);
 
-                glm::vec3 random_color{
-                    image.pixel(x,y)
-                    
-                };
+                int x1 = random_int(0, image.width() - rect_width);
+                int y1 = random_int(0, image.height() - rect_height);   
+
+                int x2 = random_int(0, image.width() - rect_width);
+                int y2 = random_int(0, image.height() - rect_height);
 
                 for (int dy = 0; dy < rect_height; ++dy)
                 {
                     for (int dx = 0; dx < rect_width; ++dx)
                     {
-                        int px = x + dx;
-                        int py = y + dy;
+                        int px = x1 + dx;
+                        int py = y1 + dy;
 
-                        if (px < image.width() && py < image.height())
-                        {
-                            image.pixel(px, py) = random_color;
-                        }
+                    
+                        glm::vec3 temp = image.pixel(px, py);
+
+                    
+                        image.pixel(px, py) = image.pixel(x2 + dx, y2 + dy);
+                        image.pixel(x2 + dx, y2 + dy) = temp;
                     }
                 }
-            }
+            }    
         }
     }
+   
 }
 
 void tri (sil::Image& image){
