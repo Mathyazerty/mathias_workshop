@@ -210,35 +210,36 @@ void animation(sil::Image& image)
 
 }
 
-void rosace(sil::Image image)
+void rosace(sil::Image& image)
 {
     sil::Image noir{500/*width*/, 500/*height*/};
-    for (int x = 0; x < image.width(); ++x)
+    for (int i = 0; i < 6; i++)
     {
+        int centreX{250};
+        int centreY{250};
+        int distance{100};
+        float angle = 2.f * 3.14159f * i / 6.f;
+        int NvCentreX = centreX + distance * cos(angle);
+        int NvCentreY = centreY + distance * sin(angle);
         for (int y = 0; y < image.height(); ++y)
         {
-            int thickness{10};
-            int rayon{100};
-            int centreX{250};
-            int centreY{250};
-            int dx = x - centreX;
-            int dy = y - centreY;
-
-            if (dx*dx + dy*dy < rayon*rayon)
+            for (int x = 0; x < image.width(); ++x)
             {
-                noir.pixel(x,y) = glm::vec3{1, 1, 1};
-            }
-
-            if (dx*dx + dy*dy < thickness*thickness)
-            {
-                noir.pixel(x,y) = glm::vec3{0, 0, 0};
-            }
-
-        }
-        for (int i = 0; i < 6; i++)
-        {
-            float angle = 2.f * 3.14159f * i / 6.f;
+                int thickness{10};
+                int rayon{100};
             
+                int dx = x - NvCentreX;
+                int dy = y - NvCentreY;
+
+                if (dx*dx + dy*dy < rayon*rayon && dx*dx + dy*dy > (rayon-thickness)*(rayon-thickness))
+                {
+                    noir.pixel(x,y) = glm::vec3{1, 1, 1};
+                }
+                
+                
+            }
+            
+                
         }
         
     }
