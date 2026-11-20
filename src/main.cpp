@@ -278,7 +278,6 @@ void mosaique(sil::Image& image){
             }
             
         }
-
         
     }
     image=resultat;
