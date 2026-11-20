@@ -26,11 +26,15 @@
 ## 6.Mirroir
 ![Logo mirroir](imagesexport/ex6_miroir.png)
 
+J’ai eu plus de difficulté avec les mouvements de pixels qu’avec les changements de couleur. Pour modifier une couleur, il suffit de changer les valeurs du pixel à sa place. Pour déplacer un pixel, il faut comprendre où il se trouve au départ, calculer sa nouvelle position et éviter d’écraser d’autres pixels. C’était donc moins intuitif pour moi.
+
 ## 7.Image bruitée
 ![Logo bruité](imagesexport/ex7_bruite.png)
 
 ## 8. Rotation de 90°
 ![Logo rotation](imagesexport/ex8_rotation.png)
+
+Au début, j’ai eu du mal à comprendre la formule de rotation, surtout pourquoi on inverse la coordonnée avec image.height() - 1 - y. J’ai fini par comprendre qu’elle permet de parcourir les positions dans le sens opposé.
 
 ## 9.RGB split
 ![Logo RGB split](imagesexport/ex9rgbsplit.png)
@@ -51,7 +55,7 @@
 ## 14. Rosace
 ![Logo rosace fail](imagesexport/ex14_rosacefail.png)
 
-J'ai rencontré quelques difficultés au debut, notamment pour gérer le positionnement des cercles sur le coutour du cercle pile au centre.
+J'ai rencontré quelques difficultés, notamment pour gérer le positionnement des cercles sur le coutour du cercle pile au centre.
 
 Et voici quel a été mon premier resultat, le problème ici à été que les cercles avaient tous un cercle noir à l'intérieur d'eux, ce qui créait le contour blanc. Cependant je n'ai pas pu utiliser cette technique ici car les cercles se chevauchent, j'ai donc du calculer et colorer uniquement les pixels situés entre le rayon et la thickness.
 ![Logo rosace](imagesexport/ex14_rosace.png)
@@ -61,11 +65,12 @@ Et voici quel a été mon premier resultat, le problème ici à été que les ce
 
 ## 16. Mosaïque miroir
 ![Logo mosaïque miroir](imagesexport/ex15_mosaiquemirr.png)
+J’ai eu du mal à comprendre qu’on pouvait inverser les pixels d’une copie sans déplacer la copie elle-même : seule la position du pixel lu dans l’image d’origine change, tandis que sa position dans la mosaïque reste la même.
 
 ### 17. Glitch
 ![Logo glitch fail](imagesexport/ex16_glitchfail.png)
 
-Alors au début j'ai décidé de remplacer des rectangles de couleurs aléatoires plutot que des pixels aléatoires pour tester.
+Pour tester j'ai décidé de remplacer des rectangles de couleurs aléatoires plutot que des pixels aléatoires.
 
 Voici le resusltat, le programme utilisait sa couleur pour peindre un petit rectangle. Cela arrivait environ 300 fois. Les rectangles se recouvraient et repeignaient parfois des zones déjà modifiées, ce qui étalait la couleur des pixels en rectangles, plutôt que de déplacer des morceaux de l’image.
 
