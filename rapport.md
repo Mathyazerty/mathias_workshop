@@ -45,6 +45,7 @@ Au début, j’ai eu du mal à comprendre la formule de rotation, surtout pourqu
 
 ## 11. Disque
 ![Logo disque](imagesexport/ex11_disque.png)
+je ne comprenais pas comment on pouvait savoir si un pixel se trouvait à l’intérieur ou à l’extérieur du disque. Il fallait calculer sa distance au centre et la comparer au rayon.
 
 ## 12. Cercle
 ![Logo cercle](imagesexport/ex12_cercle.png)
