@@ -235,11 +235,27 @@ void rosace(sil::Image& image)
                 {
                     noir.pixel(x,y) = glm::vec3{1, 1, 1};
                 }
-                
-                
+        
             }
-            
-                
+
+            for (int y = 0; y < image.height(); ++y)
+            {
+                for (int x = 0; x < image.width(); ++x)
+                {
+                    int dx = x - 250;
+                    int dy = y - 250;
+                    int rayon{100};
+                    int thickness{10};
+
+                    if (dx * dx + dy * dy < rayon * rayon
+                        && dx * dx + dy * dy > (rayon - thickness) * (rayon - thickness))
+                    {
+                        noir.pixel(x, y) = glm::vec3{1.f, 1.f, 1.f};
+                    }
+                }
+            }
+
+            image = noir;
         }
         
     }

@@ -50,3 +50,8 @@
 
 ## 14. Rosace
 ![Logo rosace](imagesexport/ex14_rosace.png)
+
+## 15. Mosaïque
+![Logo mosaïque](imagesexport/ex14_mosaique.png)
+
+## 16. M
