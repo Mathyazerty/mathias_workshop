@@ -49,9 +49,15 @@
 ![Logo animation](imagesexport/ex13_gif_animation.gif)
 
 ## 14. Rosace
+![Logo rosace fail](imagesexport/ex14_rosacefail.png)
 ![Logo rosace](imagesexport/ex14_rosace.png)
 
 ## 15. Mosaïque
 ![Logo mosaïque](imagesexport/ex14_mosaique.png)
 
-## 16. M
+## 16. Mosaïque miroir
+![Logo mosaïque miroir](imagesexport/ex15_mosaiquemirr.png)
+
+### 17. Glitch
+![Logo glitch fail](imagesexport/ex16_glitchfail.png)
+![Logo glitch](imagesexport/ex16_glitch.png)
